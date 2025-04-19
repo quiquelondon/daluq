@@ -423,15 +423,26 @@
         width: 100%; /* Responsive images */
         height: auto; /* Maintain aspect ratio */
         display: block; /* Removes inline spacing issues */
+        border-radius: 5px 5px 0 0; /* Rounded corners */
         border: 2px solid #ddd; /* Optional: border styling */
-        border-radius: 5px; /* Rounded corners */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetic */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*Subtle shadow for aesthetic */
       }
 
       .portfolio-item img:hover {
-        border-color: #333; /* Changes border color on hover */
+        border-color: #00aaff; /* Changes border color on hover */
       }
-
+      .portfolio-item p{
+        text-align: center; /* Center text below images */
+        font-size: 1em; /* Font size for description */
+        color:#333;
+        background-color:#ddd; /* Text color */
+        margin-top: 0px; /* Space between image and text */
+        font-family: "Roboto", Arial, sans-serif;
+        width: 100%;
+        border-radius: 0 0 5px 5px; /* Rounded corners */
+        border: 2px solid #ddd; /* Optional: border styling */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*Subtle shadow for aesthetic */
+      }
 
 
    
