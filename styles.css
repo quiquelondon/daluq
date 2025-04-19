@@ -435,7 +435,7 @@
         text-align: center; /* Center text below images */
         font-size: 1em; /* Font size for description */
         color:#333;
-        background-color:#ddd; /* Text color */
+        background-color:#ddd; /* background color */
         margin-top: 0px; /* Space between image and text */
         font-family: "Roboto", Arial, sans-serif;
         width: 100%;
