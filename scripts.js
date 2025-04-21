@@ -54,10 +54,10 @@ fetch('navbar.html')
         const links = document.querySelectorAll(".navbar ul li a");
       
         links.forEach(link => {
-          /*let slug = link.getAttribute("href").split("/").reverse()[0];
+          let slug = link.getAttribute("href").split("/").reverse()[0];
           if (window.location.href.indexOf(slug) > -1) {
-            link.classList.add('active');
-          }*/
+            link.classList.add('bol-menu');
+          }
       
           if (window.location.href === link.getAttribute("href")) {
             link.classList.add('bold-menu');
