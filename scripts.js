@@ -50,11 +50,11 @@ fetch('navbar.html')
     });
 
 
-    var active = 0;
+    var current = 0;
 for (var i = 0; i < document.links.length; i++) {
     if (document.links[i].href === document.URL) {
-        active = i;
+        current = i;
     }
 }
-document.links[active].className = 'bold-menu';
+document.links[current].className = 'bold-menu';
 
