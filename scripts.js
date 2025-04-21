@@ -50,10 +50,19 @@ fetch('navbar.html')
     });
 
 
-    // Select all navigation links
-const navLinks = document.querySelectorAll('.navbar a');
-
-// Get the current URL path
-const currentPath = window.location.pathname;
+    document.addEventListener("DOMContentLoaded", function() {
+        const links = document.querySelectorAll(".navbar ul li a");
+      
+        links.forEach(link => {
+          /*let slug = link.getAttribute("href").split("/").reverse()[0];
+          if (window.location.href.indexOf(slug) > -1) {
+            link.classList.add('active');
+          }*/
+      
+          if (window.location.href === link.getAttribute("href")) {
+            link.classList.add('bold-menu');
+          }
+        });
+      });
 
 
