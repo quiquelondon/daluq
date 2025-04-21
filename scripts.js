@@ -50,19 +50,11 @@ fetch('navbar.html')
     });
 
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const links = document.querySelectorAll(".navbar ul li a");
-      
-        links.forEach(link => {
-          let slug = link.getAttribute("href").split("/").reverse()[0];
-          if (window.location.href.indexOf(slug) > -1) {
-            link.classList.add('bol-menu');
-          }
-      
-          if (window.location.href === link.getAttribute("href")) {
-            link.classList.add('bold-menu');
-          }
-        });
-      });
-
+    var active = 0;
+for (var i = 0; i < document.links.length; i++) {
+    if (document.links[i].href === document.URL) {
+        active = i;
+    }
+}
+document.links[active].className = 'bold-menu';
 
