@@ -452,8 +452,13 @@
         text-decoration: none; /* Remove underline */
       }
 
+      /* lightbox arrows visible on mobile */
+      @media (max-width: 768px) {
+        .lb-nav a.lb-prev, .lb-nav a.lb-next {
+          opacity: 1!important; /* Show arrows on mobile */
+        }
+      }
 
-   
       .lnr {
         display: inline-block;
         fill: currentColor;
@@ -487,13 +492,8 @@
       }
 
 
-      /* Full-width content for mobile
-        @media (max-width: 768px) {
-          .main-content {
-            margin-left: 0;
-            width: 100%;
-          }
-        } */
+
+       
 
       /* Footer Section */
         .footer-section {
