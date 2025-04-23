@@ -49,12 +49,19 @@ fetch('navbar.html')
         }
     });
 
+    // Highlight the current page in the navbar
+    // var current = 0;
+    // for (var i = 0; i < document.links.length; i++) {
+    // if (document.links[i].href === document.URL) {
+    //     current = i;
+    // }
+    // }
+    // document.links[current].className = 'bold-menu';
 
-    var current = 0;
-for (var i = 0; i < document.links.length; i++) {
-    if (document.links[i].href === document.URL) {
-        current = i;
-    }
-}
-document.links[current].className = 'bold-menu';
-
+    // Ligthbox scripts
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'alwaysShowNavOnTouchDevices': true,
+        'showImageNumberLabel': false
+    })

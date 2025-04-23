@@ -418,7 +418,14 @@
         flex: 1 1 300px; /* Each item takes at least 300px width but shrinks/grows responsively */
         max-width: 400px; /* Optional: limit max size */
       }
-
+      .portfolio-item:hover {
+        transform: scale(1.05); /* Slightly enlarge on hover */
+        transition: transform 0.3s ease; /* Smooth transition */
+      }
+      .portfolio-item a {
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit color from parent */
+      }
       .portfolio-item img, .portfolio-item video {
         width: 100%; /* Responsive images */
         height: auto; /* Maintain aspect ratio */
@@ -442,6 +449,7 @@
         border-radius: 0 0 5px 5px; /* Rounded corners */
         border: 2px solid #ddd; /* Optional: border styling */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*Subtle shadow for aesthetic */
+        text-decoration: none; /* Remove underline */
       }
 
 

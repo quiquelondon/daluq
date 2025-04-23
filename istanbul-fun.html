@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Megrim">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.css">
     <!-- External scripts -->
     <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox-plus-jquery.min.js"></script>
 </head>
 <body>
     <div id="header-mobile"></div>
@@ -47,62 +49,80 @@
           <p class="paragraph">This is a centered paragraph describing the section.</p>
         </div>
         <main class="portfolio-container">
-            <div class="portfolio-item">
-              <img src="assets/backgammon.JPG" alt="Portfolio Image 1">
-            </div>
-            <div class="portfolio-item">
-              <img src="assets/barajas-airport.JPG" alt="Portfolio Image 2">
-            </div>
-            <div class="portfolio-item">
-              <img src="assets/istanbul-fun.jpg" alt="Portfolio Image 3">
-            </div>
-            <div class="portfolio-item">
-              <video controls autoplay muted loop>
+          <div class="portfolio-item">
+            <video controls autoplay muted loop>
                 <source src="assets\istanbul-dance.mp4" type="video/mp4">
-              </video>
-            </div> 
-            <div class="portfolio-item">
-              <img src="assets/lucas-istanbul-airport.JPG" alt="Portfolio Image 4">
+            </video>
+            <p>No Comment!</p></a>
+          </div> 
+          <div class="portfolio-item">
+            <a href="assets/lucas-istanbul-airport.JPG" data-lightbox="istanbul-fun" data-title="Que Nervios!"><img src="assets/lucas-istanbul-airport.JPG" alt="Portfolio Image 4">
+              <p>Que Nervios!</p></a>
             </div>
-            <div class="portfolio-item">
-              <img src="assets/brothers-spice.JPG" alt="Portfolio Image 5">
+          <div class="portfolio-item">
+            <a href="assets/brothers-spice.JPG" data-lightbox="istanbul-fun" data-title="Huele a comida!"><img src="assets/brothers-spice.JPG" alt="Portfolio Image 5">
+              <p>Huele a comida!</p></a>
+            </div>          
+          <div class="portfolio-item">
+            <a href="assets/backgammon.JPG" data-lightbox="istanbul-fun" data-title="Le vamos a desplumar"><img src="assets/backgammon.JPG" alt="Portfolio Image 1">
+          <p>Le vamos a desplumar</p></a>  
             </div>
-            <div class="portfolio-item">
-                <img src="assets/group-sophia.JPG" alt="Portfolio Image 6">
-              </div>
-              <div class="portfolio-item">
-                <img src="assets/group-marina.JPG" alt="Portfolio Image 7">
-              </div>
-              <div class="portfolio-item">
-                <img src="assets/group-ferry.JPG" alt="Portfolio Image 8">
-              </div>  
-              <div class="portfolio-item">
-                <img src="assets/baklava.JPG" alt="Portfolio Image 12">
-              </div>
-              <div class="portfolio-item">
-                  <img src="assets/dario-gato.JPG" alt="Portfolio Image 13">
-                </div>
-                <div class="portfolio-item">
-                  <img src="assets/group-blue-mosque.JPG" alt="Portfolio Image 14">
-                </div>
-                <div class="portfolio-item">
-                  <img src="assets/group-dinner.JPG" alt="Portfolio Image 9">
-                </div> 
-                <div class="portfolio-item">
-                  <img src="assets/istanbul-flat.JPG" alt="Portfolio Image 10">
-                </div>
-                <div class="portfolio-item">
-                  <img src="assets/group-umbrellas.JPG" alt="Portfolio Image 11">
-                </div>
-                <div class="portfolio-item">
-                  <img src="assets/lucas-blue-mosque-2.jpg" alt="Portfolio Image 15">
-                </div>
-                <div class="portfolio-item">
-                    <img src="assets/dario-blue-mosque.jpg" alt="Portfolio Image 16">
-                </div>
-                <div class="portfolio-item">
-                    <img src="assets/dario-sophia.jpg" alt="Portfolio Image 17">
-                </div>
+          <div class="portfolio-item">
+            <a href="assets/barajas-airport.JPG" data-lightbox="istanbul-fun" data-title="Que paciencia hay que tener!"><img src="assets/barajas-airport.JPG" alt="Portfolio Image 2">
+          <p>Que paciencia hay que tener!</p></a>
+            </div>
+          <div class="portfolio-item">
+            <a href="assets/istanbul-fun.jpg" data-lightbox="istanbul-fun" data-title="Vaya techos tiene el dentista!"><img src="assets/istanbul-fun.jpg" alt="Portfolio Image 3">
+          <p>Vaya techos tiene el dentista!</p></a>
+            </div>
+          <div class="portfolio-item">
+            <a href="assets/group-sophia.JPG" data-lightbox="istanbul-fun" data-title="Que llegamos tarde a la pelu"><img src="assets/group-sophia.JPG" alt="Portfolio Image 6">
+              <p>Que llegamos tarde a la pelu</p></a>
+            </div>
+          <div class="portfolio-item">
+            <a href="assets/group-marina.JPG" data-lightbox="istanbul-fun" data-title="Se pasaron con la laca Nelly"><img src="assets/group-marina.JPG" alt="Portfolio Image 7">
+              <p>Se pasaron con la laca Nelly</p></a>          
+            </div>
+          <div class="portfolio-item">
+            <a href="assets/group-ferry.JPG" data-lightbox="istanbul-fun" data-title="Pues me siguen doliendo las muelas"><img src="assets/group-ferry.JPG" alt="Portfolio Image 8">
+              <p>Pues me siguen doliendo las muelas</p></a>
+          </div>  
+          <div class="portfolio-item">
+            <a href="assets/baklava.JPG" data-lightbox="istanbul-fun" data-title="Quien paga esto?"><img src="assets/baklava.JPG" alt="Portfolio Image 12">
+              <p>Quien paga esto?</p></a>
+          </div>
+          <div class="portfolio-item">
+            <a href="assets/dario-gato.JPG" data-lightbox="istanbul-fun" data-title="He visto un lindo gatito"><img src="assets/dario-gato.JPG" alt="Portfolio Image 13">
+              <p>He visto un lindo gatito</p></a>
+          </div>
+          <div class="portfolio-item">
+            <a href="assets/group-blue-mosque.JPG" data-lightbox="istanbul-fun" data-title="Otra mezquita...Dientes!"><img src="assets/group-blue-mosque.JPG" alt="Portfolio Image 14">
+              <p>Otra mezquita...Dientes!</p></a>
+          </div>
+          <div class="portfolio-item">
+            <a href="assets/group-dinner.JPG" data-lightbox="istanbul-fun" data-title="Mas berengenas"><img src="assets/group-dinner.JPG" alt="Portfolio Image 9">
+              <p>Mas berengenas</p></a>
+          </div> 
+          <div class="portfolio-item">
+            <a href="assets/istanbul-flat.JPG" data-lightbox="istanbul-fun" data-title="Cara o Cruz para elegir sofa"><img src="assets/istanbul-flat.JPG" alt="Portfolio Image 10">
+              <p>Cara o Cruz para elegir sofa</p></a>
+          </div>
+          <div class="portfolio-item">
+            <a href="assets/group-umbrellas.JPG" data-lightbox="istanbul-fun" data-title="Partidazo del Fenerbahce"><img src="assets/group-umbrellas.JPG" alt="Portfolio Image 11">
+              <p>Partidazo del Fenerbahce</p></a>
+          </div>
+          <div class="portfolio-item">
+            <a href="assets/lucas-blue-mosque-2.jpg" data-lightbox="istanbul-fun" data-title="Aguantando la risa"><img src="assets/lucas-blue-mosque-2.jpg" alt="Portfolio Image 15">
+              <p>Aguantando la risa</p></a>
+          </div>
+          <div class="portfolio-item">
+            <a href="assets/dario-blue-mosque.jpg" data-lightbox="istanbul-fun" data-title="Con photoshop cambias de hermano"><img src="assets/dario-blue-mosque.jpg" alt="Portfolio Image 16">
+              <p>Con photoshop cambias de hermano</p></a>
+          </div>
+          <div class="portfolio-item">
+            <a href="assets/dario-sophia.jpg" data-lightbox="istanbul-fun" data-title="Y tambien se cambia el fondo"><img src="assets/dario-sophia.jpg" alt="Portfolio Image 17">
+              <p>y tambien se cambia el fondo</p></a>
+          </div>
           </main>
       </section>
       <div id="more-activities-anchor" class="more-activities">
