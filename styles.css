@@ -487,13 +487,13 @@
       }
 
 
-      Full-width content for mobile
+      /* Full-width content for mobile
         @media (max-width: 768px) {
           .main-content {
             margin-left: 0;
             width: 100%;
           }
-        }
+        } */
 
       /* Footer Section */
         .footer-section {
