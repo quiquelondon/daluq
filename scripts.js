@@ -19,16 +19,16 @@ fetch('header-mobile.html')
     .then(html => {
         document.getElementById('header-mobile').innerHTML = html;
     })
-    .catch(error => console.error('Error loading navbar:', error));
+    .catch(error => console.error('Error loading header-mobile:', error));
 
+    // Load the navbar HTML into the page
 fetch('navbar.html')
     .then(response => response.text())
     .then(html => {
         document.getElementById('navbar').innerHTML = html;
     })
     .catch(error => console.error('Error loading navbar:', error));
-
-
+    // Navbar dropdown functionality
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('dropdown-btn')) {
             const button = event.target;
@@ -49,6 +49,116 @@ fetch('navbar.html')
         }
     });
 
+
+    // Load the carousel HTML into the page
+    fetch('carousel.html')
+    .then((response) => response.text())
+    .then((html) => {
+        document.getElementById('carousel').innerHTML = html;
+
+        // Initialize the carousel after loading
+        const slider = document.querySelector('.slider');
+        const slideWidth = slider.children[0].offsetWidth + 20; // Include margin
+        let isTransitioning = false; // Prevent overlapping transitions
+        let startX = 0;
+        let isDragging = false;
+
+        function rotateLeft() {
+            if (isTransitioning) return; // Prevent rapid clicks
+            isTransitioning = true;
+
+            // Slide to the left
+            slider.style.transition = 'transform 0.5s ease-in-out';
+            slider.style.transform = `translateX(-${slideWidth}px)`;
+
+            // After the transition, move the first item to the end and reset position
+            slider.addEventListener('transitionend', function handleLeft() {
+                slider.removeEventListener('transitionend', handleLeft); // Avoid duplicate calls
+                const firstChild = slider.children[0];
+                slider.appendChild(firstChild); // Move the first child to the end
+                slider.style.transition = 'none'; // Disable transition for reset
+                slider.style.transform = 'translateX(0)'; // Reset position
+                isTransitioning = false; // Transition complete
+            });
+        }
+
+        function rotateRight() {
+            if (isTransitioning) return; // Prevent rapid clicks
+            isTransitioning = true;
+
+            // Move the last item to the beginning
+            const lastChild = slider.children[slider.children.length - 1];
+            slider.insertBefore(lastChild, slider.children[0]); // Move the last child to the beginning
+            slider.style.transition = 'none'; // Disable transition for immediate reposition
+            slider.style.transform = `translateX(-${slideWidth}px)`; // Start shifted left
+
+            // Trigger the slide to the right
+            setTimeout(() => {
+                slider.style.transition = 'transform 0.5s ease-in-out';
+                slider.style.transform = 'translateX(0)'; // Slide to the original position
+            });
+
+            // After the transition, reset the state
+            slider.addEventListener('transitionend', function handleRight() {
+                slider.removeEventListener('transitionend', handleRight); // Avoid duplicate calls
+                isTransitioning = false; // Transition complete
+            });
+        }
+
+        // Handle arrow clicks
+        document.querySelector('.carousel-btn.left').addEventListener('click', rotateRight);
+        document.querySelector('.carousel-btn.right').addEventListener('click', rotateLeft);
+
+        // Drag/Swipe functionality
+        slider.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX; // Capture the initial X position
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const moveX = e.pageX - startX; // Calculate the distance moved
+            if (moveX > 50) {
+                isDragging = false; // End dragging
+                rotateRight(); // Trigger rotation to the right
+            } else if (moveX < -50) {
+                isDragging = false; // End dragging
+                rotateLeft(); // Trigger rotation to the left
+            }
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDragging = false; // Reset dragging state
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDragging = false; // Reset dragging state if mouse leaves the slider
+        });
+
+        slider.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].pageX; // Capture the initial X position on touch
+        });
+
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const moveX = e.touches[0].pageX - startX; // Calculate the distance moved
+            if (moveX > 50) {
+                isDragging = false; // End dragging
+                rotateRight(); // Trigger rotation to the right
+            } else if (moveX < -50) {
+                isDragging = false; // End dragging
+                rotateLeft(); // Trigger rotation to the left
+            }
+        });
+
+        slider.addEventListener('touchend', () => {
+            isDragging = false; // Reset dragging state
+        });
+    })
+    .catch((error) => console.error('Error loading carousel:', error));
+
+
     // Highlight the current page in the navbar
     // var current = 0;
     // for (var i = 0; i < document.links.length; i++) {
@@ -65,3 +175,4 @@ fetch('navbar.html')
         'alwaysShowNavOnTouchDevices': true,
         'showImageNumberLabel': false
     })
+

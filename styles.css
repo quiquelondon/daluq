@@ -28,7 +28,7 @@
           left: 0;
           height: 100%;
           transition: transform 0.3s ease;
-          z-index: +1; /* Send the video behind the content */
+          z-index: 1000; /* Send the video behind the content */
           transform: translateX(-100%); /* Hide sidebar by default */
         /*  overflow-y: hidden;*/ /* do not Allow scrolling if content overflows */
       }
@@ -334,7 +334,7 @@
       /* Center the title and paragraph */
       .text-center {
         text-align: center;
-        margin-bottom: 30px; /* Add spacing below the text */
+        margin: 30px 0; /* Add spacing below and above the text */
       }
 
       .title {
@@ -539,5 +539,113 @@
         }
 
 
+        .container {
+          position: relative;
+          width: 100vw;
+          overflow: hidden;
+          height: 300px;
+          padding-bottom: 100px;
+          margin-top: 50px;
+      }
 
 
+      
+      .slider {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: transform 0.5s ease-in-out;
+          height: 300px;
+      }
+      
+      .slider div {
+          flex: 0 0 auto;
+          margin: 0 10px;
+          text-align: center;
+          transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      }
+      
+      .slider div img {
+          width: 300px;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 10px;
+      }
+      .slider div a{
+          text-decoration: none;
+      }
+      .slider div p {
+          font-size: 14px;
+          color: #ffffff;
+          position: absolute;
+          font-size: 25px;
+          font-family: "Megrim";
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-weight: 800;
+          background-color: rgba(0, 0, 0, 0.3);
+          
+      }
+      
+      .carousel-btn {
+          position: absolute;
+          top: 60%;
+          transform: translateY(-50%);
+          background-color: rgba(255, 0, 0, 0.5);
+          color: white;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+          z-index: 10;
+          font-size: 20px;
+          border-radius: 50%;
+          z-index: 100;
+          width: 50px;
+          height: 50px;
+      }
+      
+      .carousel-btn.left {
+          left: 20px;
+      }
+      
+      .carousel-btn.right {
+          right: 20px;
+      }
+      
+      /* Styling the items to have different sizes */
+      /* .slider div:nth-child(1),
+      .slider div:nth-child(7) {
+          transform: scale(0.8);
+          opacity: 1;
+          height:auto;
+          z-index: 10;
+      } */
+      
+      .slider div:nth-child(1),
+      .slider div:nth-child(5) {
+          transform: scale(0.8);
+          opacity: 1;
+          height:auto;
+          z-index: 20;
+      }
+      
+      .slider div:nth-child(2),
+      .slider div:nth-child(4) {
+          transform: scale(0.8);
+          opacity: 1;
+          height:auto;
+          z-index: 50;
+      }
+      
+      .slider div:nth-child(3) {
+          transform: scale(1);
+          opacity: 1;
+          height:auto;
+          z-index: 100;
+      }
+
+      .inactive-link {
+        pointer-events: none;
+        cursor: default;
+     }
