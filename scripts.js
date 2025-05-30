@@ -50,6 +50,8 @@ fetch('navbar.html')
     });
 
 
+    
+
     // Load the carousel HTML into the page
     fetch('carousel.html')
     .then((response) => response.text())
@@ -63,27 +65,27 @@ fetch('navbar.html')
         let startX = 0;
         let isDragging = false;
 
-        function rotateLeft() {
-            if (isTransitioning) return;
-            isTransitioning = true;
+function rotateLeft() {
+    if (isTransitioning) return;
+    isTransitioning = true;
 
-            // Move first item to end instantly before starting the transition
-            const firstChild = slider.children[0];
-            slider.appendChild(firstChild);
+    // Move first item to end instantly before starting the transition
+    const firstChild = slider.children[0];
+    slider.appendChild(firstChild);
 
-            slider.style.transition = 'none';
-            slider.style.transform = `translateX(${slideWidth}px)`;
-            void slider.offsetWidth; // Force browser repaint
+    slider.style.transition = 'none';
+    slider.style.transform = `translateX(${slideWidth}px)`;
+    void slider.offsetWidth; // Force browser repaint
 
-            // Start animation
-            slider.style.transition = 'transform 0.5s ease-in-out';
-            slider.style.transform = 'translateX(0)';
+    // Start animation
+    slider.style.transition = 'transform 0.5s ease-in-out';
+    slider.style.transform = 'translateX(0)';
 
-            slider.addEventListener('transitionend', function handleLeft() {
-                slider.removeEventListener('transitionend', handleLeft);
-                isTransitioning = false;
-            });
-        }
+    slider.addEventListener('transitionend', function handleLeft() {
+        slider.removeEventListener('transitionend', handleLeft);
+        isTransitioning = false;
+    });
+}
 
         function rotateRight() {
             if (isTransitioning) return; // Prevent rapid clicks
@@ -163,15 +165,6 @@ fetch('navbar.html')
     .catch((error) => console.error('Error loading carousel:', error));
 
 
-    // Highlight the current page in the navbar
-    // var current = 0;
-    // for (var i = 0; i < document.links.length; i++) {
-    // if (document.links[i].href === document.URL) {
-    //     current = i;
-    // }
-    // }
-    // document.links[current].className = 'bold-menu';
-
     // Ligthbox scripts
     lightbox.option({
         'resizeDuration': 200,
@@ -179,4 +172,19 @@ fetch('navbar.html')
         'alwaysShowNavOnTouchDevices': true,
         'showImageNumberLabel': false
     })
+
+// function transitionToPage(href) {
+//   document.querySelector(".sidebar").classList.remove('active');
+  
+//   setTimeout(() => {
+//     document.body.classList.add("fade-out");
+//     setTimeout(() => {
+//       window.location.href = href;
+//     }, 500); // Adjust for the fade-out timing
+//   }, 300); // Adjust for sidebar animation timing
+// }
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   document.body.classList.add("fade-in");
+// });
 

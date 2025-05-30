@@ -11,8 +11,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Megrim">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.css">
     <!-- External scripts -->
-    <script src="scripts.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox-plus-jquery.min.js"></script>
+    <script src="https://unpkg.com/three@0.150.1/build/three.min.js"></script>
+    <script src="https://unpkg.com/globe.gl"></script>
+    <script src="scripts.js"></script>
+    <script src="earth.js" defer></script>
+
 </head>
 <body>
     
@@ -25,12 +30,15 @@
         <div id="navbar"></div> <!-- This will be replaced by the navbar script -->
 
     </div>
-
+    <div class="cube" id="cube">
+    <div class="page" id="Home">    
+    
     <div class="main-content">
  
     <div class="banner">
         <!-- Image as the background -->
-        <img src="assets\dotted-world-blue.jpg" type="image/jpg">
+        <!-- <img src="assets\dotted-world-blue.jpg" type="image/jpg"> -->
+         <div id="globeViz"></div>
 
         <!-- Content overlay -->
         <div class="banner-content">
@@ -42,7 +50,10 @@
             </div> -->
        </div>
     </div>
-
+    </div>
+    
+    </div>
+    </div>
 </body>
 </html>
 
