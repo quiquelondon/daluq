@@ -64,21 +64,24 @@ fetch('navbar.html')
         let isDragging = false;
 
         function rotateLeft() {
-            if (isTransitioning) return; // Prevent rapid clicks
+            if (isTransitioning) return;
             isTransitioning = true;
 
-            // Slide to the left
-            slider.style.transition = 'transform 0.5s ease-in-out';
-            slider.style.transform = `translateX(-${slideWidth}px)`;
+            // Move first item to end instantly before starting the transition
+            const firstChild = slider.children[0];
+            slider.appendChild(firstChild);
 
-            // After the transition, move the first item to the end and reset position
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(${slideWidth}px)`;
+            void slider.offsetWidth; // Force browser repaint
+
+            // Start animation
+            slider.style.transition = 'transform 0.5s ease-in-out';
+            slider.style.transform = 'translateX(0)';
+
             slider.addEventListener('transitionend', function handleLeft() {
-                slider.removeEventListener('transitionend', handleLeft); // Avoid duplicate calls
-                const firstChild = slider.children[0];
-                slider.appendChild(firstChild); // Move the first child to the end
-                slider.style.transition = 'none'; // Disable transition for reset
-                slider.style.transform = 'translateX(0)'; // Reset position
-                isTransitioning = false; // Transition complete
+                slider.removeEventListener('transitionend', handleLeft);
+                isTransitioning = false;
             });
         }
 
@@ -91,7 +94,7 @@ fetch('navbar.html')
             slider.insertBefore(lastChild, slider.children[0]); // Move the last child to the beginning
             slider.style.transition = 'none'; // Disable transition for immediate reposition
             slider.style.transform = `translateX(-${slideWidth}px)`; // Start shifted left
-
+            void slider.offsetWidth; // Force browser repaint
             // Trigger the slide to the right
             setTimeout(() => {
                 slider.style.transition = 'transform 0.5s ease-in-out';
@@ -101,6 +104,7 @@ fetch('navbar.html')
             // After the transition, reset the state
             slider.addEventListener('transitionend', function handleRight() {
                 slider.removeEventListener('transitionend', handleRight); // Avoid duplicate calls
+
                 isTransitioning = false; // Transition complete
             });
         }

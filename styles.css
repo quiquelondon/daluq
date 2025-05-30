@@ -14,7 +14,7 @@
 
       /* Sidebar Styles */
       .sidebar {
-          width: 70%; /* Adjusted width for better visibility */
+          width: 30%; /* Adjusted width for better visibility */
           background-color: #333333d5;
           color: #fff;
           font-family: Roboto;
@@ -31,6 +31,11 @@
           z-index: 1000; /* Send the video behind the content */
           transform: translateX(-100%); /* Hide sidebar by default */
         /*  overflow-y: hidden;*/ /* do not Allow scrolling if content overflows */
+      }
+      @media (max-width: 768px) {
+          .sidebar {
+              width: 70%; /* Full width on mobile */
+          }
       }
       .sidebar.active {
         transform: translateX(0); /* Show sidebar when active */
@@ -639,7 +644,7 @@
       }
       
       .slider div:nth-child(3) {
-          transform: scale(1);
+          transform: scale(1.2);
           opacity: 1;
           height:auto;
           z-index: 100;
