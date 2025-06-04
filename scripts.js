@@ -173,18 +173,19 @@ function rotateLeft() {
         'showImageNumberLabel': false
     })
 
-// function transitionToPage(href) {
-//   document.querySelector(".sidebar").classList.remove('active');
-  
-//   setTimeout(() => {
-//     document.body.classList.add("fade-out");
-//     setTimeout(() => {
-//       window.location.href = href;
-//     }, 500); // Adjust for the fade-out timing
-//   }, 300); // Adjust for sidebar animation timing
-// }
+function transitionToPage(href) {
+  document.querySelector(".sidebar").classList.remove('active');
+  setTimeout(() => {
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+      window.location.href = href;
+      
+    }, 500); // Adjust for the fade-out timing
+  }, 300); // Adjust for sidebar animation timing
+    document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+});
+}
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   document.body.classList.add("fade-in");
-// });
+
 

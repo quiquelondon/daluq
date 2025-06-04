@@ -1,7 +1,7 @@
 <nav class="navbar">
     <ul>
-        <li><a href="index">Home</a></li>
-        <li><a href="New-York" onclick="transitionToPage('New-York.html'); return false;">New-York</a><button class="dropdown-btn">></button>
+        <li><a href="index" onclick="transitionToPage('index.html'); return false;">Home</a></li>
+        <li><a href="New York" onclick="transitionToPage('/index.html?city=New York'); return false;">New York</a><button class="dropdown-btn">></button>
             <ul class="subnav">
                 
                     <li><a href="ny-places">New York Places</a></li>
@@ -11,7 +11,7 @@
             </ul>
         </li>
 
-        <li><a href="Rome">Rome</a><button class="dropdown-btn">></button>
+        <li><a href="Rome" onclick="transitionToPage('/index.html?city=Rome'); return false;">Rome</a><button class="dropdown-btn">></button>
             <ul class="subnav">
                 <li><a href="rome-places">Rome Places</a></li>
                 <li><a href="rome-food">Rome Food</a></li>
@@ -19,7 +19,7 @@
             </ul>
          </li>
 
-        <li><a href="Istanbul">Istanbul</a><button class="dropdown-btn">></button>
+        <li><a href="Istanbul" onclick="transitionToPage('/index.html?city=Istanbul'); return false;">Istanbul</a><button class="dropdown-btn">></button>
             <ul class="subnav">
                 <li><a href="istanbul-places">Istanbul Places</a></li>
                 <li><a href="istanbul-food">Istanbul Food</a></li>
