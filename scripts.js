@@ -174,26 +174,24 @@ function rotateLeft() {
     })
 
 function transitionToPage(href) {
-  const [targetPath, queryString] = href.toLowerCase().split('?');
-  const currentPath = window.location.pathname.toLowerCase().replace(/\/+$/, '');
-  const currentCity = new URLSearchParams(window.location.search).get('city')?.toLowerCase();
-  const targetCity = new URLSearchParams(queryString).get('city')?.toLowerCase();
+const currentPath = '/index.html?city=' + window.location.pathname.replace('/', '').toLowerCase();
+const targetPath = href.replace(/\s+/g, '-').toLowerCase();
+document.querySelector(".sidebar")?.classList.remove('active');
+if (currentPath === targetPath) {
+  console.log("Already on this page, not reloading.");
+  return;
+}
 
-  // Prevent reloading if on same index page and city
-  if (currentPath.endsWith(targetPath) && currentCity === targetCity) {
-    console.log("Already on the same city page, skipping reload.");
-    return;
-  }
 
-  // Otherwise, proceed with transition
+  // Otherwise, run transition
   document.querySelector(".sidebar")?.classList.remove('active');
-
+  
   setTimeout(() => {
     document.body.classList.add("fade-out");
     setTimeout(() => {
       window.location.href = href;
-    }, 500); // match fade-out duration
-  }, 300); // match sidebar close delay
+    }, 500);
+  }, 300);
 }
 
 
