@@ -13,25 +13,25 @@
         name: 'New York',
         lat: 40.7128,
         lng: -74.0060,
-        url: 'New-York.html'
+        url: 'New-York'
       },
       {
         name: 'Rome',
         lat: 41.9028,
         lng: 12.4964,
-        url: 'Rome.html'
+        url: 'Rome'
       },
       {
         name: 'Istanbul',
         lat: 41.0082,
         lng: 28.9784,
-        url: 'Istanbul.html'
+        url: 'Istanbul'
       },
       {
         name: 'Cape Verde',
         lat: 16.5388,
         lng: -23.0418,
-        url: 'cape-verde.html'
+        url: 'cape-verde'
       }
     ];
 
