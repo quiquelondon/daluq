@@ -182,10 +182,9 @@ function transitionToPage(href) {
       
     }, 500); // Adjust for the fade-out timing
   }, 300); // Adjust for sidebar animation timing
-    document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("fade-in");
-});
 }
+
+
 
 
 

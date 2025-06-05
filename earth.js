@@ -45,15 +45,7 @@
       .labelColor(() => '#ffcc00')
       .onLabelClick(d => window.location.href = d.url);
 
-    function flyTo(placeName) {
-      const location = locations.find(loc => loc.name === placeName);
-      if (location) {
-        globe.pointOfView(
-          { lat: location.lat, lng: location.lng, altitude: 0.8 },
-          2000
-        );
-      }
-    }
+ 
 function goToCity(cityName) {
     // This is the correct place to remove the sidebar's active class,
     // as it initiates the navigation/transition sequence.
@@ -72,11 +64,13 @@ function goToCity(cityName) {
     document.getElementById('banner-content').classList.add('fade-out');
 
     // Fly to location
-    globe.pointOfView({ lat: city.lat, lng: city.lng, altitude: 0.4 }, 2000);
+    globe.pointOfView({ lat: city.lat, lng: city.lng, altitude: 0.4 }, 3000);
 
     setTimeout(() => {
         document.getElementById('globeViz').classList.add('fade-out');
-    }, 2200);
+        globe.controls().autoRotate = false;
+
+    }, 3000);
 
     setTimeout(() => {
         // Only redirect if not already on the city's page
@@ -85,16 +79,24 @@ function goToCity(cityName) {
         }
     }, 3000); // This is where the page actually changes
 }
-
 // --- Code that runs immediately on index.html load ---
-document.addEventListener('DOMContentLoaded', () => { // Ensure DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const cityParam = urlParams.get('city');
+      const banner = document.getElementById('banner-content');
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const cityParam = urlParams.get('city');
+      if (cityParam) {
+        // Do NOT show the banner
+        // setTimeout(() => {
+          goToCity(cityParam);
+        // }, 100);
+      } else {
+        // User is just visiting index normally — fade banner in
+        if (banner) {
+          banner.classList.remove('preload-hidden');
+          banner.classList.add('fade-in');
+        }
+      }
+    });
 
 
-        setTimeout(() => {
-            goToCity(cityParam);
-        }, 100); // Small delay, e.g., 100ms, to allow initial CSS to settle
-
-});
