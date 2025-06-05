@@ -175,6 +175,7 @@ function rotateLeft() {
 
 function transitionToPage(href) {
   document.querySelector(".sidebar").classList.remove('active');
+ 
   setTimeout(() => {
     document.body.classList.add("fade-out");
     setTimeout(() => {

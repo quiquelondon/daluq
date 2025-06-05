@@ -43,7 +43,7 @@
       .labelSize(1)
       .labelDotRadius(0.25)
       .labelColor(() => '#ffcc00')
-      .onLabelClick(d => window.location.href = d.url);
+      .onLabelClick(d => transitionToPage(d.url));
 
  
 function goToCity(cityName) {
