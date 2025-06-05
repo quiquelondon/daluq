@@ -2,7 +2,7 @@
       (document.getElementById('globeViz'))
       .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
       .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png')
-      .pointOfView({ lat: 20, lng: 0, altitude: 2.2 })
+      .pointOfView({ lat: 20, lng: 0, altitude: 1.8 })
       .onGlobeReady(() => {
         globe.controls().autoRotate = true;
         globe.controls().autoRotateSpeed = 0.5;
