@@ -174,17 +174,27 @@ function rotateLeft() {
     })
 
 function transitionToPage(href) {
-  document.querySelector(".sidebar").classList.remove('active');
- 
+  const [targetPath, queryString] = href.toLowerCase().split('?');
+  const currentPath = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+  const currentCity = new URLSearchParams(window.location.search).get('city')?.toLowerCase();
+  const targetCity = new URLSearchParams(queryString).get('city')?.toLowerCase();
+
+  // Prevent reloading if on same index page and city
+  if (currentPath.endsWith(targetPath) && currentCity === targetCity) {
+    console.log("Already on the same city page, skipping reload.");
+    return;
+  }
+
+  // Otherwise, proceed with transition
+  document.querySelector(".sidebar")?.classList.remove('active');
+
   setTimeout(() => {
     document.body.classList.add("fade-out");
     setTimeout(() => {
       window.location.href = href;
-      
-    }, 500); // Adjust for the fade-out timing
-  }, 300); // Adjust for sidebar animation timing
+    }, 500); // match fade-out duration
+  }, 300); // match sidebar close delay
 }
-
 
 
 
